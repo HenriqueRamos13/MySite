@@ -2,10 +2,13 @@ var mouse_x;
 var mouse_y;
 window.addEventListener("mousemove", (e) => {
   var obg = document.querySelector(".object");
+  var cur = document.querySelector(".cursor");
+  cur.style.left = e.pageX + "px";
+  cur.style.top = e.pageY + "px";
   setTimeout(() => {
     obg.style.left = e.pageX + "px";
     obg.style.top = e.pageY + "px";
-  }, 25);
+  }, 50);
 });
 const debounce = function (e, i, s) {
   let c;
@@ -185,6 +188,10 @@ function verify(e) {
           ? (addOpacity(4), skewImage(0, 1))
           : (addOpacity(5), skewImage(2, 1));
   }
+  document.querySelector("#actual").innerHTML =
+    active == 0 ? "01" : active == 1 ? "02" : "03";
+  document.querySelector("#stepName").innerHTML =
+    active == 0 ? "Sobre mim" : active == 1 ? "Por que?" : "Portfólio";
   changeStyles(getOriginal(active));
 }
 function skewImage(e, i) {

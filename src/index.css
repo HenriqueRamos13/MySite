@@ -1,5 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 130px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+header > p {
+  margin-right: 5%;
+  font-size: 1.4vw;
+  font-weight: 600;
+}
+
+#step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  font-family: "Montserrat";
+  top: 50vh;
+  left: 5%;
+}
+
+#step > p {
+  color: #fff;
+}
+
+#indicator {
+  position: fixed;
+  bottom: 0;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#line {
+  border-right: 0.5px solid rgba(255, 255, 255, 0.6);
+  height: 100px;
+  margin-top: 50px;
+}
+
+#stepName {
+  transform: rotate(-90deg);
+  font-size: 20px;
+  font-weight: 800;
+}
+
 .object {
   position: absolute;
   pointer-events: none;
@@ -7,11 +60,24 @@
   top: -100px;
   left: -100px;
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: transparent;
-  border: 1px solid lightgray;
+  background: rgb(131, 5, 143);
+  border: 1px solid rgb(131, 5, 143);
+}
+
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: -100px;
+  left: -100px;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: lightgray;
 }
 
 .App {
@@ -128,36 +194,60 @@ section > span {
     display: none;
   }
 
+  header {
+    align-items: center;
+  }
+
+  header > p {
+    font-size: 4vw;
+  }
+
+  #step {
+    top: 13vh;
+  }
+
+  #indicator {
+    display: none;
+  }
+
   section > img {
     width: 100vw;
     height: auto;
     left: 0%;
+    pointer-events: none;
   }
 
   section > p {
     font-size: 8vw;
-    bottom: 15%;
+    bottom: 0;
     left: 5%;
+    pointer-events: none;
   }
 
   section > span {
     font-size: 8vw;
-    bottom: 23%;
+    bottom: 0;
     left: 5%;
     -webkit-text-stroke: 1px #fff;
+    pointer-events: none;
   }
 
   .repositionTop1 {
-    bottom: 30%;
+    bottom: 35%;
   }
   .repositionTop2 {
-    bottom: 39%;
+    bottom: 35%;
   }
 
   .repositionBot1 {
-    top: 27%;
+    top: 38%;
   }
   .repositionBot2 {
-    top: 36%;
+    top: 38%;
+  }
+
+  .skewed {
+    transform: skew(0);
+    transition: opacity 0.4s;
   }
 }
